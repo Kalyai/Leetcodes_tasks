@@ -27,6 +27,5 @@ class Solution(object):
         else:
             return s
 
-#res = Solution().convert('PAYPALISHIRING', 3)
 res = Solution().convert('AB', 1)
-print(res) #"PAHNAPLSIIGYIR"
+print(res)
