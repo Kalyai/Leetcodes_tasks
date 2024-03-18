@@ -1,0 +1,13 @@
+class Solution:
+    def eraseOverlapIntervals(self, intervals):
+        intervals.sort(key=lambda interval: interval[1])
+        end = intervals[0][1]
+        count = len(intervals) - 1
+        for i in range(1, len(intervals)):
+            if intervals[i][0] >= end:
+                end = intervals[i][1]
+                count -= 1
+        return count
+
+res = Solution().eraseOverlapIntervals([[1, 2], [1, 2], [1, 2], [2, 3]])
+print(res)
