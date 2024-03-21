@@ -1,39 +1,32 @@
-
 class Solution(object):
     def productExceptSelf(self, nums):
-        l_nums = len(nums)
-        if 0 not in nums:
-            pr = [1] * (l_nums + 1)
-            for i in range(l_nums):
-                pr[i+1] = pr[i] * nums[i]
-            sm_nums = pr[-1]
-
-            res = list()
-            for i in range(l_nums):
-                x = nums[i]
-                res.append(sm_nums // x)
-
-            return res
-        else:
-            res = list()
-            cnt_0 = 0
+        cnt_0 = 0
+        for n in nums:
+            if n == 0:
+                cnt_0 += 1
+    
+        if cnt_0 > 1:
+            return [0] * len(nums)
+    
+        elif cnt_0 == 1:
+            su = 1
             index_0 = 0
-            pr = [1] * (l_nums + 1)
-            for i in range(l_nums):
-                if nums[i] == 0:
-                    cnt_0 += 1
+            for i in range(len(nums)):
+                if nums[i] != 0:
+                    su *= nums[i]
+                else:
                     index_0 = i
-                    pr[i+1] = pr[i]
-                else: pr[i+1] = pr[i] * nums[i]
-            if cnt_0 == 1:
-                for i in range(l_nums):
-                    x = nums[i]
-                    if x == 0:
-                        res.append(pr[-1])
-                    else: res.append(0)
-            else: res = [0] * l_nums
+    
+            res = [0] * len(nums)
+            res[index_0] = su
             return res
-
-
-res = Solution().productExceptSelf([1,2,3,4])
-print(res)
+    
+        else:
+            su = 1
+            for i in range(len(nums)):
+                su *= nums[i]
+    
+            res = list()
+            for i in range(len(nums)):
+                res.append(su//nums[i])
+            return res
