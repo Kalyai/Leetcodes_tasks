@@ -1,9 +1,8 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        cash = dict()
-        for i, num in enumerate(nums):
-            if num in cash:
+        hash = set()
+        for n in nums:
+            if n in hash:
                 return True
-            cash[num] = i
-        else:
-            return False
+            hash.add(n)
+        return False
