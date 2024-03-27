@@ -24,6 +24,8 @@ class Solution(object):
 
         stack = list()
         for token in tokens:
+
+            
             if token not in '+-*/':
                 stack.append(int(token))
             else:
