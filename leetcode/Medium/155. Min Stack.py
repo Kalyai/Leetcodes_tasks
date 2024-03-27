@@ -7,12 +7,14 @@ class MinStack(object):
         self.stack.append(val)
         if self.mi and self.mi[-1] < val:
             return
+        
         self.mi.append(val)
 
     def pop(self):
         if self.stack[-1] == self.mi[-1]:
             self.mi.pop()
             self.stack.pop()
+        
         else:
             self.stack.pop()
 
