@@ -8,6 +8,7 @@ class Solution:
           
             if height[right] > height[left]:
                 left += 1
+                
             else:
                 right -= 1
             
