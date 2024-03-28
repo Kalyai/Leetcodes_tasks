@@ -1,8 +1,4 @@
-
-
-
-
-fakeclass Solution(object):
+class Solution(object):
     def isAnagram(self, s, t):
         cnt1, cnt2 = dict(), dict()
         for string1 in s:
