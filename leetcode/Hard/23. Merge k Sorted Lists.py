@@ -6,7 +6,6 @@
 class Solution(object):
     def mergeKLists(self, lists):
         if len(lists) == 0:
-            
             return
 
         node1 = lists[0]
