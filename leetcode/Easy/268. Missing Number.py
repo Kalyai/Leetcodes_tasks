@@ -6,9 +6,6 @@ class Solution(object):
             if nums[i] > ma:
                 ma = nums[i]
             set_nums.add(nums[i])
-
-
-        
         
         for num in range(ma + 1):
             if num not in set_nums:
