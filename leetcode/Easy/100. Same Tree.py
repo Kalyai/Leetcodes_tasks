@@ -10,6 +10,8 @@ class Solution(object):
         if ((p is None) and q) or (p and (q is None)):
             return False
         elif p and q and (p.val != q.val):
+
+            
             return False
             
         if p and q:
